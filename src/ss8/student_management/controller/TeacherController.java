@@ -1,10 +1,13 @@
-package ss5_static_ac;
+package ss8.student_management.controller;
 
+import ss8.student_management.entity.Student;
+import ss8.student_management.view.StudentView;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
-    private StudentManager studentManager = new StudentManager();
-    public  void displayMainMenu(){
+public class TeacherController {
+    public  void displayMenu(){
         Scanner scanner = new Scanner(System.in);
         final int DISPLAY = 1;
         final int ADD = 2;
@@ -12,7 +15,7 @@ public class Menu {
         final int SEARCH = 4;
         boolean flag = true;
         while (flag) {
-            System.out.println("Quản lý sinh viên");
+            System.out.println("Quản lý giáo viên");
             System.out.println("-------Chức năng------" +
                     "\n 1. Danh sách sắp xếp theo tên và id" +
                     "\n 2. Thêm mới" +
@@ -25,19 +28,10 @@ public class Menu {
             switch (choice) {
                 case DISPLAY:
                     System.out.println("----Đây là chức năng hiển thị----------");
-                    Student[] students = this.studentManager.getAll();
-                    for (Student student: students) {
-                        System.out.println(student);
-                    }
+
                     break;
                 case ADD:
                     System.out.println("----Đây là chức năng thêm mới----------");
-                    System.out.println("nhập id");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    System.out.println("nhập tên");
-                    String name = scanner.nextLine();
-                    Student student = new Student(id,name);
-                    studentManager.add(student);
                     System.out.println("- Thêm mới thành công");
                     break;
                 case DELETE:

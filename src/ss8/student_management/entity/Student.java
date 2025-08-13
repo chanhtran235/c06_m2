@@ -1,4 +1,4 @@
-package ss5_static_ac;
+package ss8.student_management.entity;
 
 public class Student extends Person implements Comparable<Student> {
      public static String school ="BK";
@@ -29,16 +29,6 @@ public class Student extends Person implements Comparable<Student> {
     @Override
     public String toString() {
         return "Student :" + super.toString() + "Score : "+ score;
-    }
-
-    @Override
-    public void howToGo() {
-        System.out.println(" sinh viên đi học bằng xe oto");
-    }
-
-    // method riêng của student
-    public void study(){
-        System.out.println("sv đang học");
     }
 
     @Override
