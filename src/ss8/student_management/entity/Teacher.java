@@ -5,4 +5,9 @@ public class Teacher  extends Person {
 
     public Teacher() {
     }
+
+    @Override
+    public String getInfoToCSV() {
+        return null;
+    }
 }

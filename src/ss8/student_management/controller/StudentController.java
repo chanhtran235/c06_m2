@@ -6,6 +6,7 @@ import ss8.student_management.service.StudentService;
 import ss8.student_management.view.StudentView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class StudentController {
@@ -31,14 +32,19 @@ public class StudentController {
             switch (choice) {
                 case DISPLAY:
                     System.out.println("----Đây là chức năng hiển thị----------");
-                    ArrayList<Student> studentList = this.studentService.findAll();
+                    List<Student> studentList = this.studentService.findAll();
                     StudentView.display(studentList);
                     break;
                 case ADD:
                     System.out.println("----Đây là chức năng thêm mới----------");
                     Student student = StudentView.inputDataForStudent();
-                    this.studentService.add(student);
-                    System.out.println("- Thêm mới thành công");
+                    boolean isSuccess= this.studentService.add(student);
+                    if (isSuccess){
+                        System.out.println("- Thêm mới thành công");
+                    }else {
+                        System.out.println("- Thêm mới không  thành công");
+                    }
+
                     break;
                 case DELETE:
                     System.out.println("----Đây là chức năng xoá----------");
